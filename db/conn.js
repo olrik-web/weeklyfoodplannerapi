@@ -1,12 +1,9 @@
 const { MongoClient } = require("mongodb");
 const Db = process.env.ATLAS_URI;
-const client = new MongoClient(
-  "mongodb+srv://molrik19:lm0MtjbdcHs71rni@cluster0.97ocrib.mongodb.net/?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+const client = new MongoClient(Db, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 var _db;
 
@@ -18,7 +15,6 @@ module.exports = {
         _db = db.db("recipes");
         console.log("Successfully connected to MongoDB.");
       }
-      console.log("huh.");
 
       return callback(err);
     });
