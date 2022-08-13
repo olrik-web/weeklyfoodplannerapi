@@ -18,7 +18,8 @@ module.exports = {
         _db = db.db("recipes");
         console.log("Successfully connected to MongoDB.");
       }
-      
+      console.log("huh.");
+
       return callback(err);
     });
   },
